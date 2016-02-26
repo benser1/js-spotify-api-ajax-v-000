@@ -8,6 +8,12 @@ $(function() {
 // then call function within doc ready to get them to work
 // and display the chart correctly in index.html
 
+$(document).ready(function(){
+  $.get("https://developer.spotify.com/web-api/get-artists-top-tracks/", function(response){
+    $('#spotify-chart').html(response)
+  })
+})
+
 function extractTop10Tracks(tracks) {
   return tracks.slice(0, 10);
 }
